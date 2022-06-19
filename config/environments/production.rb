@@ -3,7 +3,7 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.routes.default_url_options = {
-  host: "https://domesticapp-api.herokuapp.com/"
+  host: "https://domesticapp.herokuapp.com/"
 }
 
 Rails.application.configure do
