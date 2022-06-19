@@ -1,0 +1,41 @@
+[
+  {
+    "email": "employee@mail.com",
+    "user_type": "employee",
+    "phone": "9825424954",
+    "lada": "+1",
+    "password": "123456",
+    "password_confirmation": "123456"
+  },
+  {
+    "email": "customer@mail.com",
+    "user_type": "customer",
+    "phone": "8994466683",
+    "lada": "+52",
+    "password": "123456",
+    "password_confirmation": "123456"
+  },
+  {
+    "email": "employee1@mail.com",
+    "user_type": "employee",
+    "phone": "9825424954",
+    "lada": "+1",
+    "password": "123456",
+    "password_confirmation": "123456"
+  },
+  {
+    "email": "employee2@mail.com",
+    "user_type": "employee",
+    "phone": "9825424954",
+    "lada": "+1",
+    "password": "123456",
+    "password_confirmation": "123456"
+  },
+  {
+    "email": "admin@mail.com",
+    "user_type": "admin",
+    "lada": "+1",
+    "password": "123456",
+    "password_confirmation": "123456"
+  }
+]

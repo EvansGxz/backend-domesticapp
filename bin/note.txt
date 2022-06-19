@@ -1,0 +1,12 @@
+Servicios:
+titulos
+Simple(8 horas), colaborativo(+1 empleada), Paquete()
+precio
+preferencia de proveedores (Menos ocupado, por mejor reseña)
+duracion (horario)
+
+Categorias
+Empleado empleado empleado
+
+Empleado
+servicio servicio servicio

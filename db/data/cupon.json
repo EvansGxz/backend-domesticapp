@@ -1,0 +1,14 @@
+[
+  {
+    "name": "dome10",
+    "cupon_title": "Test",
+    "discount": 10,
+    "end_date": "2015-12-07"
+  },
+  {
+    "name": "ani20",
+    "cupon_title": "Aniversario",
+    "discount": 20,
+    "end_date": "2015-12-08"
+  }
+]

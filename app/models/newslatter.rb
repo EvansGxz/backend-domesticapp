@@ -1,0 +1,2 @@
+class Newslatter < ApplicationRecord
+end

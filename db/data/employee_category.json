@@ -1,0 +1,26 @@
+[
+  {
+    "category_id": 1,
+    "employee_id": 1
+  },
+  {
+    "category_id": 1,
+    "employee_id": 2
+  },
+  {
+    "category_id": 1,
+    "employee_id": 3
+  },
+  {
+    "category_id": 2,
+    "employee_id": 3
+  },
+  {
+    "category_id": 2,
+    "employee_id": 2
+  },
+  {
+    "category_id": 1,
+    "employee_id": 4
+  }
+]

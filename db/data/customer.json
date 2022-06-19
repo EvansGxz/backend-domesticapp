@@ -1,0 +1,24 @@
+[
+  {
+    "full_name": "John Doe",
+    "cc_nit": "GOLE404",
+    "client_type": "Persona",
+    "birth_date": "1998-01-10",
+    "region": "Tamaulipas",
+    "cod_refer": "88930",
+    "user_id": 2,
+    "country": "Mexico",
+    "document_type": "INE"
+  },
+  {
+    "full_name": "Erika Doe",
+    "cc_nit": "GOLE404",
+    "client_type": "Persona",
+    "birth_date": "1998-01-10",
+    "region": "Tamaulipas",
+    "cod_refer": "88930",
+    "user_id": 6,
+    "country": "Mexico",
+    "document_type": "INE"
+  }
+]

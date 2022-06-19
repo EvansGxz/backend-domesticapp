@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Microsoft",
+    "date": "2015-03-11",
+    "time": "10:00:00",
+    "customer_id": 1,
+    "employee_id": 1
+  },
+  {
+    "name": "Taty",
+    "date": "2022-05-15",
+    "time": "10:00:00",
+    "customer_id": 2,
+    "employee_id": 1
+  },
+  {
+    "name": "Edificio B",
+    "date": "2022-06-11",
+    "time": "12:30:00",
+    "customer_id": 1,
+    "employee_id": 2
+  }
+]

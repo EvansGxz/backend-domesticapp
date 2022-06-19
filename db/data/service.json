@@ -1,0 +1,14 @@
+[
+  {
+    "service_name": "Barendero",
+    "category_id": 1
+  },
+  {
+    "service_name": "Limpiador",
+    "category_id": 1
+  },
+  {
+    "service_name": "Lavado de cobijas",
+    "category_id": 2
+  }
+]

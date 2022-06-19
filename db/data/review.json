@@ -1,0 +1,14 @@
+[
+  {
+    "body": "Nice work!",
+    "score": 5,
+    "customer_id": 1,
+    "employee_id": 1
+  },
+  {
+    "body": "Bad work!",
+    "score": 1,
+    "customer_id": 1,
+    "employee_id": 2
+  }
+]

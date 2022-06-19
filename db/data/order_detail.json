@@ -1,0 +1,35 @@
+[
+  {
+    "category_id": 1,
+    "employee_id": 1,
+    "customer_id": 1,
+    "active": true,
+    "address": "Pino, Monterreal, Rio Bravo, Tamaulipas, Mexico",
+    "start_date": "2015-10-01",
+    "service_time": "11:00",
+    "workday": "Completo",
+    "supply_food": "no"
+  },
+  {
+    "category_id": 1,
+    "employee_id": 2,
+    "customer_id": 1,
+    "active": false,
+    "address": "Alamo, Monterreal, Rio Bravo, Tamaulipas, Mexico",
+    "start_date": "2015-10-01",
+    "service_time": "11:00",
+    "workday": "Completo",
+    "supply_food": "no"
+  },
+  {
+    "category_id": 1,
+    "employee_id": 3,
+    "customer_id": 1,
+    "active": true,
+    "address": "Joya, Almaguer, Reynosa, Tamaulipas, Mexico",
+    "start_date": "2022-10-01",
+    "service_time": "12:00",
+    "workday": "Completo",
+    "supply_food": "no"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "hability_id": 1,
+    "employee_id": 1
+  },
+  {
+    "hability_id": 2,
+    "employee_id": 1
+  },
+  {
+    "hability_id": 2,
+    "employee_id": 2
+  }
+]

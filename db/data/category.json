@@ -1,0 +1,26 @@
+[
+  {
+    "category_name": "Niñera",
+    "price": 200000
+  },
+  {
+    "category_name": "Cuidados",
+    "price": 250000
+  },
+  {
+    "category_name": "Camareros",
+    "price": 400000
+  },
+  {
+    "category_name": "Agricultura",
+    "price": 350000
+  }, 
+  {
+    "category_name": "Construccion",
+    "price": 400000
+  },
+  {
+    "category_name": "Empaquetado",
+    "price": 350000
+  }
+]
