@@ -88,7 +88,7 @@ Rails.application.routes.draw do
   get "/hability", to: "habilities#index"
   get "/hability/:id", to: "habilities#show"
   post "/hability", to: "habilities#create"
-  patch "/hability", to: "habilities#update"
+  patch "/hability/:id", to: "habilities#update"
   delete "/hability/:id", to: "habilities#destroy"
 
 # Cupons

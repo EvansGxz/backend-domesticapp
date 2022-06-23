@@ -28,7 +28,7 @@ class HabilityEmployeesController < ApplicationController
   # POST /category
   def create
     @hability = HabilityEmployee.new(hability_params)
-    if @c.save
+    if @hability.save
       render json: @hability, status: :created
     else
       render json: { errors: @hability.errors }, status: :unprocessable_entity

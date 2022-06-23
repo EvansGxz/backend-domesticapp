@@ -1,6 +1,6 @@
 class AdminSerializer < ActiveModel::Serializer
   attributes :id, :nickname, :user_type, :email, :token, :image_url, :role,
-             :user_id, :lada
+             :user_id, :lada, :cover
 
   def user_type
     object.user.user_type
