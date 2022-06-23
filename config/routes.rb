@@ -96,7 +96,7 @@ Rails.application.routes.draw do
   get "/cupons/:id", to: "cupons#show"
   get "/cupon/:id", to: "cupons#cupon"
   post "/cupons", to: "cupons#create"
-  patch "/cupons", to: "cupons#update"
+  patch "/cupons/:id", to: "cupons#update"
   delete "/cupons/:id", to: "cupons#destroy"
 
 # Customers Cupons

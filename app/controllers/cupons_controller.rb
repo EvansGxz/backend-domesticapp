@@ -34,7 +34,6 @@ class CuponsController < ApplicationController
     end
   end
 
-
   # POST /category
   def create
     @cupon = Cupon.new(cupon_params)
@@ -57,11 +56,11 @@ class CuponsController < ApplicationController
   end
 
   def destroy
-    @cupon = Cupon.find_by(id: params[:id]).destroy
-    if @cupon
+    @cupon = Cupon.find_by(id: params[:id])
+    if @cupon.destroy
       render json: { Message: "Delete cupon" }, status: :ok
     else
-      render json: { errors: "Not found" }, status: :not_found
+      render json: { errors: "No se puede borrar" }
     end
   end
 
