@@ -64,7 +64,7 @@ require "faker"
     experience: "2 años",
     user_id: 1
   )
-    employee.cover.attach(io: URI.open("https://domesticapp.s3.us-east-2.amazonaws.com/verified.png"), filename: "employee")
+    employee.cover.attach(io: URI.open("https://cdn-icons-png.flaticon.com/512/1432/1432472.png"), filename: "employee")
     puts employee.errors.full_messages unless employee.save
 
   employee = Employee.new(
@@ -76,7 +76,7 @@ require "faker"
     experience: "2 años",
     user_id: 3
   )
-    employee.cover.attach(io: URI.open("https://domesticapp.s3.us-east-2.amazonaws.com/verified.png"), filename: "employee")
+    employee.cover.attach(io: URI.open("https://cdn-icons-png.flaticon.com/512/1432/1432472.png"), filename: "employee")
     puts employee.errors.full_messages unless employee.save
   employee = Employee.new(
     full_name: "Hetor Salinas",
@@ -87,7 +87,7 @@ require "faker"
     experience: "2 años",
     user_id: 4
   )
-    employee.cover.attach(io: URI.open("https://domesticapp.s3.us-east-2.amazonaws.com/verified.png"), filename: "employee")
+    employee.cover.attach(io: URI.open("https://cdn-icons-png.flaticon.com/512/1432/1432472.png"), filename: "employee")
     puts employee.errors.full_messages unless employee.save
   puts "Empoyee seeding end"
 # ======================= [CREATE Customer] =======================
@@ -104,7 +104,7 @@ require "faker"
     country: "Mexico",
     document_type: "INE"
   )
-    customer.cover.attach(io: URI.open("https://domesticapp.s3.us-east-2.amazonaws.com/verified.png"), filename: "Customer")
+    customer.cover.attach(io: URI.open("https://www.pngplay.com/wp-content/uploads/1/Businessman-PNG-Clipart-Background.png"), filename: "Customer")
     puts customer.errors.full_messages unless customer.save
   puts "Admins seeding end"
 # ======================= [CREATE ADMIN]=======================
@@ -114,28 +114,28 @@ require "faker"
     role: "admin",
     user_id: 5
   )
-    admin.cover.attach(io: URI.open("https://domesticapp.s3.us-east-2.amazonaws.com/verified.png"), filename: "admin")
+    admin.cover.attach(io: URI.open("https://www.aldiabodegascertificadas.com/wp-content/uploads/2016/09/empresario-inticap.png"), filename: "admin")
     puts admin.errors.full_messages unless admin.save
   puts "Admin seeding end"
 # ======================= [CREATE CATEGORY]=======================
   puts "Seeding Categories..."
     categories = Category.new(category_name: "Cuidados", price_col_complete: 250000, region: "Colombia", sector_id: 1)
-    categories.image.attach(io: URI.open("https://domesticapp.s3.us-east-2.amazonaws.com/abuela.jpeg"), filename: "cat1")
+    categories.image.attach(io: URI.open("https://domesticapp-storage.s3.us-east-2.amazonaws.com/categories/cat2.svg"), filename: "cat1")
     puts categories.errors.full_messages unless categories.save
     categories = Category.new(category_name: "Niñera", price_col_complete: 200000, region: "Colombia", sector_id: 1)
-    categories.image.attach(io: URI.open("https://domesticapp.s3.us-east-2.amazonaws.com/ni%C3%B1era.jpeg"), filename: "cat2")
+    categories.image.attach(io: URI.open("https://domesticapp-storage.s3.us-east-2.amazonaws.com/categories/cat1cat1.svg"), filename: "cat2")
     puts categories.errors.full_messages unless categories.save
     categories = Category.new(category_name: "Camareros", price_col_complete: 400000, region: "Colombia", sector_id: 1)
-    categories.image.attach(io: URI.open("https://domesticapp.s3.us-east-2.amazonaws.com/camarero.jpeg"), filename: "cat3")
+    categories.image.attach(io: URI.open("https://domesticapp-storage.s3.us-east-2.amazonaws.com/categories/cat3.svg"), filename: "cat3")
     puts categories.errors.full_messages unless categories.save
     categories = Category.new(category_name: "Agricultura", price_col_complete: 350000, region: "Colombia", sector_id: 4)
-    categories.image.attach(io: URI.open("https://domesticapp.s3.us-east-2.amazonaws.com/agricultor.jpeg"), filename: "cat4")
+    categories.image.attach(io: URI.open("https://domesticapp-storage.s3.us-east-2.amazonaws.com/categories/cat9.svg"), filename: "cat4")
     puts categories.errors.full_messages unless categories.save
     categories = Category.new(category_name: "Construccion", price_col_complete: 400000, region: "Colombia", sector_id: 5)
-    categories.image.attach(io: URI.open("https://domesticapp.s3.us-east-2.amazonaws.com/construccion.jpeg"), filename: "cat5")
+    categories.image.attach(io: URI.open("https://domesticapp-storage.s3.us-east-2.amazonaws.com/categories/Cat7.svg"), filename: "cat5")
     puts categories.errors.full_messages unless categories.save
     categories = Category.new(category_name: "Empaquetado", price_col_complete: 350000, region: "Colombia", sector_id: 1)
-    categories.image.attach(io: URI.open("https://domesticapp.s3.us-east-2.amazonaws.com/empaquetar.jpeg"), filename: "cat6")
+    categories.image.attach(io: URI.open("https://domesticapp-storage.s3.us-east-2.amazonaws.com/categories/Cat6.svg"), filename: "cat6")
     puts categories.errors.full_messages unless categories.save
   puts "Category seeding end"
 # ======================= [CREATE SERVICE]=======================
@@ -187,28 +187,28 @@ require "faker"
     body: "Sabe barrer, deja los lugares impcables sin ninguna mota de polvo",
     score: 2
   )
-  hability.image.attach(io: URI.open("https://domesticapp.s3.us-east-2.amazonaws.com/skills/skill1.png"), filename: "S1")
+  hability.image.attach(io: URI.open("https://domesticapp-storage.s3.us-east-2.amazonaws.com/skills/award.png"), filename: "S1")
   puts hability.errors.full_messages unless hability.save
   hability = Hability.new(
     hability: "Puntual",
     body: "Llega puntual a todas sus labores sin expeción",
     score: 4
   )
-    hability.image.attach(io: URI.open("https://domesticapp.s3.us-east-2.amazonaws.com/skills/skill2.png"), filename: "S1")
+    hability.image.attach(io: URI.open("https://domesticapp-storage.s3.us-east-2.amazonaws.com/skills/badge.png"), filename: "S1")
     puts hability.errors.full_messages unless hability.save
   hability = Hability.new(
     hability: "Autodidacta",
     body: "Realiza todas sus labores sin nececidad de apoyo",
     score: 5
   )
-    hability.image.attach(io: URI.open("https://domesticapp.s3.us-east-2.amazonaws.com/skills/skill3.png"), filename: "S1")
+    hability.image.attach(io: URI.open("https://domesticapp-storage.s3.us-east-2.amazonaws.com/skills/like.png"), filename: "S1")
     puts hability.errors.full_messages unless hability.save
     hability = Hability.new(
       hability: "Servicial",
       body: "Siempre da una buena cara y ayuda a la causa",
       score: 4
     )
-      hability.image.attach(io: URI.open("https://domesticapp.s3.us-east-2.amazonaws.com/skills/skill4.png"), filename: "S1")
+      hability.image.attach(io: URI.open("https://domesticapp-storage.s3.us-east-2.amazonaws.com/skills/medal.png"), filename: "S1")
       puts hability.errors.full_messages unless hability.save
   puts "Habilty seeding end"
 # ======================= [CREATE Hability Employee]=======================
@@ -259,16 +259,14 @@ require "faker"
     favorites = Favorite.new(favorites_data)
     puts favorites.errors.full_messages unless favorites.save
   end
-puts "Favorites seeding end"
-
-
+ puts "Favorites seeding end"
 # ======================= [CREATE SECTOR CAT]=======================
-puts "Seeding Favorites..."
-sector_cat_data.each do |sector_cat_data|
-  sectors_cat = SectorCat.new(sector_cat_data)
-  puts sectors_cat.errors.full_messages unless sectors_cat.save
-end
-puts "Favorites seeding end"
+  puts "Seeding Favorites..."
+  sector_cat_data.each do |sector_cat_data|
+    sectors_cat = SectorCat.new(sector_cat_data)
+    puts sectors_cat.errors.full_messages unless sectors_cat.save
+  end
+  puts "Favorites seeding end"
 
 
  news= Newslatter.new(title: "Notiticia 1", body: "lorem ipsum dolor sit amet, consectetur adip")

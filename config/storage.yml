@@ -9,10 +9,10 @@ local:
 #Use bin/rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 amazon:
   service: S3
-  access_key_id: AKIA6B66EI6JDBNX7JXX
-  secret_access_key: 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
+  access_key_id: AKIAZEXZ3YPBB4H3HZBT
+  secret_access_key: HQ1QM05h+GmFcNzWkUBYH1A+kDuLYw2AxfP++NWJ
   region: us-east-2
-  bucket: domesticapp
+  bucket: domesticapp-storage
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
