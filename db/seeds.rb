@@ -225,20 +225,7 @@ require "faker"
     puts new_user.errors.full_messages unless new_user.save
   end
   puts "PRACTICE seeding end"
-# ======================= [CREATE PRACTICE EMPLOYEE]=======================
-  puts "Seeding PRACTICE Employees..."
-  practice_employee_data.each do |practice_employee_data|
-    new_user = PracticeEmployee.new(practice_employee_data)
-    puts new_user.errors.full_messages unless new_user.save
-  end
-  puts "PRACTICE Employee seeding end"
-# ======================= [CREATE CALENDAR]=======================
-  puts "Seeding calendar..."
-  calendar_data.each do |calendar_data|
-    new_user = CalendarUser.new(calendar_data)
-    puts new_user.errors.full_messages unless new_user.save
-  end
-  puts "Calendar seeding end"
+
 # ======================= [CREATE ADDRESS]=======================
   puts "Seeding address..."
   address_data.each do |address_data|
