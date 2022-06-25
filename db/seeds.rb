@@ -247,13 +247,6 @@ require "faker"
     puts favorites.errors.full_messages unless favorites.save
   end
  puts "Favorites seeding end"
-# ======================= [CREATE SECTOR CAT]=======================
-  puts "Seeding Favorites..."
-  sector_cat_data.each do |sector_cat_data|
-    sectors_cat = SectorCat.new(sector_cat_data)
-    puts sectors_cat.errors.full_messages unless sectors_cat.save
-  end
-  puts "Favorites seeding end"
 
 
  news= Newslatter.new(title: "Notiticia 1", body: "lorem ipsum dolor sit amet, consectetur adip")
