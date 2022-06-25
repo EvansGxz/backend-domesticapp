@@ -134,6 +134,15 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy_employee
+    @user = Employee.find(params[:id]).destroy
+    if @user
+      render json: { Message: "Delete User" }, status: :ok
+    else
+      render json: { errors: "Not found" }, status: :not_found
+    end
+  end
+
   private
 
   def user_params

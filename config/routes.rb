@@ -19,7 +19,8 @@ Rails.application.routes.draw do
 # Employee
   patch "/employees/:id", to: "users#create_employee"
   patch "/customers/:id", to: "users#create_customer"
-
+  delete "/employee/:id", to: "users#destroy_employee"
+  
   resource :profile, controller: :users
 # Sessions
   post "/login_social", to: "sessions#login_social"

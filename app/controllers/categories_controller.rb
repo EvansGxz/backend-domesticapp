@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  skip_before_action :require_login!, only: :create
+  skip_before_action :require_login!, only: %i[update create]
   # GET /category
   def index
     @category = Category.all
@@ -54,6 +54,7 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    params.permit(:category_name, :price_col_complete, :price_col_half, :price_spain, :region, :image, :sector_id)
+    params.permit(:category_name, :price_col_complete, :price_col_half, :price_spain, :region, :image,
+                  :sector_id)
   end
 end
