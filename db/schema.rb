@@ -73,9 +73,9 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_17_155818) do
 
   create_table "categories", force: :cascade do |t|
     t.string "category_name"
-    t.integer "price_col_complete"
-    t.integer "price_col_half"
-    t.integer "price_spain"
+    t.decimal "price_col_complete"
+    t.decimal "price_col_half"
+    t.decimal "price_spain"
     t.bigint "sector_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

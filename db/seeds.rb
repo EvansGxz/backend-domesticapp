@@ -119,24 +119,13 @@ require "faker"
   puts "Admin seeding end"
 # ======================= [CREATE CATEGORY]=======================
   puts "Seeding Categories..."
-    categories = Category.new(category_name: "Cuidados", price_col_complete: 250000, region: "Colombia", sector_id: 1)
+    categories = Category.new(category_name: "Cuidados", price_col_complete: 250000.25, price_spain: 16.45, region: "Colombia", sector_id: 1)
     categories.image.attach(io: URI.open("https://domesticapp-storage.s3.us-east-2.amazonaws.com/categories/cat2.svg"), filename: "cat1")
     puts categories.errors.full_messages unless categories.save
     categories = Category.new(category_name: "Niñera", price_col_complete: 200000, region: "Colombia", sector_id: 1)
     categories.image.attach(io: URI.open("https://domesticapp-storage.s3.us-east-2.amazonaws.com/categories/cat1cat1.svg"), filename: "cat2")
     puts categories.errors.full_messages unless categories.save
-    categories = Category.new(category_name: "Camareros", price_col_complete: 400000, region: "Colombia", sector_id: 1)
-    categories.image.attach(io: URI.open("https://domesticapp-storage.s3.us-east-2.amazonaws.com/categories/cat3.svg"), filename: "cat3")
-    puts categories.errors.full_messages unless categories.save
-    categories = Category.new(category_name: "Agricultura", price_col_complete: 350000, region: "Colombia", sector_id: 4)
-    categories.image.attach(io: URI.open("https://domesticapp-storage.s3.us-east-2.amazonaws.com/categories/cat9.svg"), filename: "cat4")
-    puts categories.errors.full_messages unless categories.save
-    categories = Category.new(category_name: "Construccion", price_col_complete: 400000, region: "Colombia", sector_id: 5)
-    categories.image.attach(io: URI.open("https://domesticapp-storage.s3.us-east-2.amazonaws.com/categories/Cat7.svg"), filename: "cat5")
-    puts categories.errors.full_messages unless categories.save
-    categories = Category.new(category_name: "Empaquetado", price_col_complete: 350000, region: "Colombia", sector_id: 1)
-    categories.image.attach(io: URI.open("https://domesticapp-storage.s3.us-east-2.amazonaws.com/categories/Cat6.svg"), filename: "cat6")
-    puts categories.errors.full_messages unless categories.save
+
   puts "Category seeding end"
 # ======================= [CREATE SERVICE]=======================
   puts "Seeding Services..."

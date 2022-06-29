@@ -55,6 +55,6 @@ class CategoriesController < ApplicationController
 
   def category_params
     params.permit(:category_name, :price_col_complete, :price_col_half, :price_spain, :region, :image,
-                  :sector_id)
+                  :sector_id, :body)
   end
 end

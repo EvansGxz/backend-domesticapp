@@ -1,5 +1,5 @@
 class OrderDetailsController < ApplicationController
-  skip_before_action :require_login!, only: :create
+  skip_before_action :require_login!, only: %i[create update]
   # GET /order_details
   def index
     @order_details = OrderDetail.all
@@ -8,7 +8,7 @@ class OrderDetailsController < ApplicationController
 
   # GET /order_details/[:id]
   def show
-    @order_details = OrderDetail.where(customer_id: params[:id])
+    @order_details = OrderDetail.find_by(id: params[:id])
     if @order_details
       render json: @order_details, status: :ok
     else
@@ -62,7 +62,7 @@ class OrderDetailsController < ApplicationController
   def update
     @order_details = OrderDetail.find_by(id: params[:id])
     if @order_details.update(order_detail_params)
-      render json: @current_OrderDetail, status: :ok
+      render json: @order_details, status: :ok
     else
       render json: { errors: "Not found" }, status: :not_found
     end
