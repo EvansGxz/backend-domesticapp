@@ -2,6 +2,7 @@ class Category < ApplicationRecord
   has_one_attached :image
 
   has_many :employee_categories, dependent: :destroy
+  has_many :services, dependent: :destroy
   belongs_to :sector
 
   def image_url
