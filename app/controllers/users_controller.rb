@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  skip_before_action :require_login!, only: %i[create create_social create_employee create_customer create_admin]
+  skip_before_action :require_login!,
+                     only: %i[create create_social create_employee create_customer create_admin]
 
   # POST /users
   def create

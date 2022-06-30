@@ -1,6 +1,6 @@
 class EmployeeCategorySerializer < ActiveModel::Serializer
   attributes :id, :full_name, :category_id, :category_name, :price_col_complete,
-   :price_col_half, :price_spain, :employee_id
+             :price_col_half, :price_spain, :employee_id
 
   def category_name
     object.category.category_name

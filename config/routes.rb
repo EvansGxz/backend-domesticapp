@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get "/twilio", to: "users#send_text"
   post "social_auth/callback", to: "social_auth_controller#authenticate_social_auth_user" # this is the line where we add our routes
 
-# Users
+  # Users
   post "/users", to: "users#create"
   get "/users", to: "users#index"
   get "/employee", to: "users#employee"
@@ -11,18 +11,18 @@ Rails.application.routes.draw do
   get "/employee/:id", to: "users#employee_profile"
   delete "/users/:id", to: "users#destroy"
 
-# admin
+  # admin
   patch "/admin/:id", to: "users#create_admin"
   get "/admin/:id", to: "users#admin_profile"
   get "/admin", to: "users#admin"
 
-# Employee
+  # Employee
   patch "/employees/:id", to: "users#create_employee"
   patch "/customers/:id", to: "users#create_customer"
   delete "/employee/:id", to: "users#destroy_employee"
-  
+
   resource :profile, controller: :users
-# Sessions
+  # Sessions
   post "/login_social", to: "sessions#login_social"
   post "/login_phone", to: "sessions#login_phone"
   post "/login", to: "sessions#create"
@@ -33,27 +33,26 @@ Rails.application.routes.draw do
   get "/offices", to: "offices#index"
   post "/offices", to: "offices#create"
 
-# Categories
+  # Categories
   get "/categories", to: "categories#index"
   get "/categories/:id", to: "categories#show", as: "category"
   post "/categories", to: "categories#create"
   delete "/categories/:id", to: "categories#destroy"
   patch "/categories/:id", to: "categories#update"
 
-# Notifications
+  # Notifications
   get "/notifications", to: "notifications#index_all"
   get "/notify/:id", to: "notifications#show_all"
   post "/notifications", to: "notifications#create_all"
   delete "/notifications/:id", to: "notifications#destroy_all"
 
-# Report
+  # Report
   get "/reports", to: "reports#index_all"
   get "/reports/:id", to: "reports#show_all"
   post "/reports", to: "reports#create_all"
   delete "/reports/:id", to: "reports#destroy_all"
 
-
-# Services
+  # Services
   get "/services", to: "services#index"
   get "/services/:id", to: "services#show"
   get "/service/:id", to: "services#show_service"
@@ -61,13 +60,13 @@ Rails.application.routes.draw do
   delete "/services/:id", to: "services#destroy"
   patch "/services/:id", to: "services#update"
 
-# EmployeeCategories
+  # EmployeeCategories
   get "/employee_categories", to: "employee_categories#index"
   get "/employee_categories/:id", to: "employee_categories#show"
   post "/employee_categories", to: "employee_categories#create"
 
   get "/employee_category/:id", to: "employee_categories#show_employee"
-# OrderDetails
+  # OrderDetails
   get "/order_details", to: "order_details#latest"
   get "/orders", to: "order_details#index"
 
@@ -80,12 +79,12 @@ Rails.application.routes.draw do
   delete "/order_details/:id", to: "order_details#destroy"
   get "/order/:id", to: "order_details#show_order"
 
-# Reviews
+  # Reviews
   get "/reviews", to: "reviews#index"
   get "/reviews/:id", to: "reviews#show"
   post "/reviews", to: "reviews#create"
 
-# Employee Hability
+  # Employee Hability
   get "/hability_employees", to: "hability_employees#index"
   get "/hability_employees/:id", to: "hability_employees#show"
   get "/he/:id", to: "hability_employees#show_he"
@@ -93,14 +92,14 @@ Rails.application.routes.draw do
   patch "/hability_employees/:id", to: "hability_employees#update"
   delete "/hability_employees/:id", to: "hability_employees#destroy"
 
-# Hability
+  # Hability
   get "/hability", to: "habilities#index"
   get "/hability/:id", to: "habilities#show"
   post "/hability", to: "habilities#create"
   patch "/hability/:id", to: "habilities#update"
   delete "/hability/:id", to: "habilities#destroy"
 
-# Cupons
+  # Cupons
   get "/cupons", to: "cupons#index"
   get "/cupons/:id", to: "cupons#show"
   get "/cupon/:id", to: "cupons#cupon"
@@ -108,7 +107,7 @@ Rails.application.routes.draw do
   patch "/cupons/:id", to: "cupons#update"
   delete "/cupons/:id", to: "cupons#destroy"
 
-# Customers Cupons
+  # Customers Cupons
   get "/cupon_users", to: "cupon_users#index"
   get "/cupon_users/:id", to: "cupon_users#show"
   post "/cupon_users", to: "cupon_users#create"
@@ -116,34 +115,34 @@ Rails.application.routes.draw do
   get "/show_cupon/:id", to: "cupons#show_cupon"
   delete "/delete_cupon_users/:id", to: "cupon_users#destroy"
 
-# Addres
+  # Addres
   get "/address", to: "addresses#index"
   get "/address/:id", to: "addresses#show"
   post "/address", to: "addresses#create"
   patch "/address", to: "addresses#update"
 
-# Newslatter
+  # Newslatter
   post "/newslatters", to: "newslatters#create"
   get "/newslatters/:id", to: "newslatters#show"
   get "/newslatters", to: "newslatters#index"
   delete "/newslatters/:id", to: "newslatters#destroy"
   patch "/newslatters/:id", to: "newslatters#update"
 
-# Sectores
+  # Sectores
   post "/sector", to: "sector#create"
   get "/sector/:id", to: "sector#show"
   get "/sector", to: "sector#index"
   delete "/sector/:id", to: "sector#destroy"
   patch "/sector/:id", to: "sector#update"
 
-# Sectores
+  # Sectores
   post "/sector_cats", to: "sector_cats#create"
   get "/sector_cats/:id", to: "sector_cats#show"
   get "/sector_cats", to: "sector_cats#index"
   delete "/sector_cats/:id", to: "sector_cats#destroy"
   patch "/sector_cats/:id", to: "sector_cats#update"
 
-# Favoites
+  # Favoites
   get "/favorites", to: "favorites#index"
   post "/favorites", to: "favorites#create"
   get "/favorites/:id", to: "favorites#show"

@@ -1,6 +1,6 @@
 class NotificationsController < ApplicationController
   skip_before_action :require_login!, only: :create_all
-# Customers
+  # Customers
   # GET /notifications
   def index
     @notification = CustomerNotification.all
@@ -38,7 +38,7 @@ class NotificationsController < ApplicationController
     end
   end
 
-#Notificaciones
+  # Notificaciones
   # GET /notifications
   def index_all
     @notification = Notification.all
@@ -85,7 +85,7 @@ class NotificationsController < ApplicationController
     end
   end
 
-# Private
+  # Private
 
   private
 

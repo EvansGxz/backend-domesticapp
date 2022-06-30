@@ -64,7 +64,6 @@ class CuponsController < ApplicationController
     end
   end
 
-
   private
 
   def cupon_params

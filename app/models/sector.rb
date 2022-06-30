@@ -1,4 +1,2 @@
 class Sector < ApplicationRecord
-
-  
 end

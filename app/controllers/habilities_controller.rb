@@ -4,7 +4,7 @@ class HabilitiesController < ApplicationController
   def index
     @hability = Hability.all
     render json: @hability, includes: %i[hability created_at], methods: [:image_url],
-    status: :ok
+           status: :ok
   end
 
   # GET /hability/[:id]

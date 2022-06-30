@@ -23,6 +23,7 @@ module Api
           render json: { err: "Error delivering code verification" },
                  status: :internal_server_error and return
         end
+
         render json: { sid: verification.sid }, status: :ok
       else
         render json: { errors: "Celular no encontrado" }, status: :not_found
