@@ -25,6 +25,15 @@ class EmployeeCategoriesController < ApplicationController
     end
   end
 
+  def show_employee_category
+    @employee_category = EmployeeCategory.where(category_id: params[:id])
+    if @employee_category
+      render json: @employee_category, status: :ok
+    else
+      render json: { errors: "Not found" }, status: :not_found
+    end
+  end
+
   # POST /EmployeeCategory
   def create
     @employee_category = EmployeeCategory.new(employee_category_params)

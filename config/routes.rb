@@ -64,6 +64,8 @@ Rails.application.routes.draw do
   get "/employee_categories", to: "employee_categories#index"
   get "/employee_categories/:id", to: "employee_categories#show"
   post "/employee_categories", to: "employee_categories#create"
+  get "/employee_cat/:id", to: "employee_categories#show_employee_category"
+
 
   get "/employee_category/:id", to: "employee_categories#show_employee"
   # OrderDetails
