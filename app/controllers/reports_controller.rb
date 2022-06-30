@@ -1,5 +1,6 @@
 class ReportsController < ApplicationController
-  skip_before_action :require_login!, %i[create_all destroy_all]
+  skip_before_action :require_login!, only: %i[create_all destroy_all]
+  
   # GET /notifications
   def index_all
     @report = Report.all
