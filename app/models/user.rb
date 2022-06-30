@@ -4,8 +4,7 @@ class User < ApplicationRecord
   has_one :customer, dependent: :destroy
   has_one :employee, dependent: :destroy
   has_one :admin, dependent: :destroy
-
-
+  has_many :notifications, dependent: :destroy
 
   validates :email, presence: true,
                     format: { with: URI::MailTo::EMAIL_REGEXP },
