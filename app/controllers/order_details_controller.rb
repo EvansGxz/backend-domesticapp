@@ -71,7 +71,7 @@ class OrderDetailsController < ApplicationController
   def destroy
     @order_details = OrderDetail.find_by(id: params[:id]).destroy
     if @order_details
-      render json: { Message: "Delete order_details" }, status: :ok
+      render json: @order_details, status: :ok
     else
       render json: { errors: "Not found" }, status: :not_found
     end

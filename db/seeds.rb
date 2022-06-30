@@ -241,3 +241,12 @@ require "faker"
  news= Newslatter.new(title: "Notiticia 1", body: "lorem ipsum dolor sit amet, consectetur adip")
  puts news.errors.full_messages unless news.save
  puts "Seeding Finished"
+
+
+ # ======================= [CREATE REPORT]=======================
+ puts "Seeding Categories..."
+ categories = Report.new(body: "El empleado no se presentó a trabajar", customer_id: 1, employee_id: 1)
+ categories.cover.attach(io: URI.open("https://domesticapp-storage.s3.us-east-2.amazonaws.com/categories/cat2.svg"), filename: "cat1")
+ puts categories.errors.full_messages unless categories.save
+
+puts "Category seeding end"

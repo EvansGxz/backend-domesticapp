@@ -41,9 +41,17 @@ Rails.application.routes.draw do
   patch "/categories/:id", to: "categories#update"
 
 # Notifications
-  get "/notifications", to: "notifications#index"
-  get "/notifications/:id", to: "notifications#show"
-  post "/notifications", to: "notifications#create"
+  get "/notifications", to: "notifications#index_all"
+  get "/notify/:id", to: "notifications#show_all"
+  post "/notifications", to: "notifications#create_all"
+  delete "/notifications/:id", to: "notifications#destroy_all"
+
+# Report
+  get "/reports", to: "reports#index_all"
+  get "/reports/:id", to: "reports#show_all"
+  post "/reports", to: "reports#create_all"
+  delete "/reports/:id", to: "reports#destroy_all"
+
 
 # Services
   get "/services", to: "services#index"
