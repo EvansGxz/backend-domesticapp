@@ -9,7 +9,10 @@ Rails.application.routes.draw do
   get "/customer", to: "users#customer"
   get "/customer/:id", to: "users#customer_profile"
   get "/employee/:id", to: "users#employee_profile"
+  get "/customer_country/:id", to: "users#customer_country"
   delete "/users/:id", to: "users#destroy"
+  
+  get "/user_id/:id", to: "users#customer_profile_user"
 
   # admin
   patch "/admin/:id", to: "users#create_admin"
@@ -39,6 +42,7 @@ Rails.application.routes.draw do
   post "/categories", to: "categories#create"
   delete "/categories/:id", to: "categories#destroy"
   patch "/categories/:id", to: "categories#update"
+  get "/show_country/:id", to: "categories#show_country"
 
   # Notifications
   get "/notifications", to: "notifications#index_all"
@@ -65,7 +69,7 @@ Rails.application.routes.draw do
   get "/employee_categories/:id", to: "employee_categories#show"
   post "/employee_categories", to: "employee_categories#create"
   get "/employee_cat/:id", to: "employee_categories#show_employee_category"
-
+  delete "/employee_categories/:id", to: "employee_categories#destroy"
 
   get "/employee_category/:id", to: "employee_categories#show_employee"
   # OrderDetails

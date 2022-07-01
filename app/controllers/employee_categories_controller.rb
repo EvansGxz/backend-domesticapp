@@ -55,6 +55,15 @@ class EmployeeCategoriesController < ApplicationController
     end
   end
 
+  def destroy
+    @employee_category = EmployeeCategory.find_by(category_id: params[:id]).destroy
+    if @employee_category
+      render json: { Message: "Delete employee_category" }, status: :ok
+    else
+      render json: { errors: "Not found" }, status: :not_found
+    end
+  end
+
   private
 
   def employee_category_params

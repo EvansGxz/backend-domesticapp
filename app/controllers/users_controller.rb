@@ -94,6 +94,24 @@ class UsersController < ApplicationController
     end
   end
 
+  def customer_profile_user
+    @user = Customer.find_by(id: params[:id])
+    if @user
+      render json: @user, include: [:customer], status: :ok
+    else
+      render json: { errors: "Not found" }, status: :not_found
+    end
+  end
+
+  def customer_country
+    @user = Customer.where(country: params[:id])
+    if @user
+      render json: @user, include: [:customer], status: :ok
+    else
+      render json: { errors: "Not found" }, status: :not_found
+    end
+  end
+
   def employee_profile
     @user = User.find_by(id: params[:id])
     if @user

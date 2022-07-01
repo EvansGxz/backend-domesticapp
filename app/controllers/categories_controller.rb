@@ -8,7 +8,16 @@ class CategoriesController < ApplicationController
 
   # GET /category/[:id]
   def show
-    @category = Category.find_by(id: params[:id])
+    @category = Category.where(id: params[:id])
+    if @category
+      render json: @category, status: :ok
+    else
+      render json: { errors: "Not found" }, status: :not_found
+    end
+  end
+
+  def show_country
+    @category = Category.where(region: params[:id])
     if @category
       render json: @category, status: :ok
     else
