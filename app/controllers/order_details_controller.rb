@@ -81,6 +81,6 @@ class OrderDetailsController < ApplicationController
 
   def order_detail_params
     params.permit(:address, :start_date, :finish_date, :service_time, :discount, :workday,
-                  :supply_food, :category_id, :active, :employee_id, :customer_id)
+                  :supply_food, :category_id, :active, :employee_id, :customer_id, :hours)
   end
 end
