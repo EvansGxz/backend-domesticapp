@@ -3,12 +3,12 @@
 # This class handle verify process with twi
 module Api
   class VerifyController < ApplicationController
-    skip_before_action :require_login!, only: %i[start verify]
-    before_action :set_twilio_client, only: %i[start verify]
+    skip_before_action :require_login!, only: %i[start verify message]
+    before_action :set_twilio_client, only: %i[start verify message]
 
     def start
       phone_number = params[:phone]
-      user = User.find_by(phone: phone_number.to_s)
+      user = User.find_by(phone: phone_number)
       via = params[:via]
       lada = params[:lada]
       if !phone_number || !via
@@ -17,7 +17,7 @@ module Api
       end
 
       if user
-        verification = start_verification("#{lada}#{phone_number}", via)
+        verification = start_verification(lada+phone_number, via)
 
         unless verification.sid
           render json: { err: "Error delivering code verification" },
@@ -29,6 +29,24 @@ module Api
         render json: { errors: "Celular no encontrado" }, status: :not_found
       end
     end
+
+    def message
+      
+      require 'rubygems' 
+      require 'twilio-ruby' 
+       
+      
+
+      phone = params[:phone]
+      lada = params[:lada]
+      service = params[:service]
+      @client.messages.create( 
+                                   body: "Nuevo Servicio Programado de #{service}",
+                                   from: "whatsapp:+18445052797",
+                                   to: "whatsapp:#{lada}1#{phone}"
+                                 ) 
+    end
+
 
     def verify
       phone_number = params[:phone]
@@ -58,19 +76,19 @@ module Api
     private
 
     def set_twilio_client
-      @client = Twilio::REST::Client.new(ENV.fetch("TWILIO_ACCOUNT_SID", nil),
-                                         ENV.fetch("TWILIO_AUTH_TOKEN", nil))
+      account_sid = "ACe0f9a419f2c4afdaeb89fbc487c16c3e"
+      auth_token = "42facc3d561f9d0dc5484fafa043adce"
+      @client = Twilio::REST::Client.new(account_sid, auth_token)
     end
 
     def start_verification(to, channel = "whatsapp")
-      channel = "whatsapp"
-      verification = @client.verify.services(ENV.fetch("VERIFY_SERVICE_SID", nil))
+      @client.verify.services(ENV.fetch("VERIFY_SERVICE_SID", nil))
                             .verifications
                             .create(to: to, channel: channel)
     end
 
     def check_verification(phone, code)
-      verification_check = @client.verify.services(ENV.fetch("VERIFY_SERVICE_SID", nil))
+      @client.verify.services(ENV.fetch("VERIFY_SERVICE_SID", nil))
                                   .verification_checks
                                   .create(to: phone, code: code)
     end

@@ -176,5 +176,7 @@ Rails.application.routes.draw do
     # Account Security Phone Verification API
     post "/verification/start", to: "verify#start"
     post "/verification/verify", to: "verify#verify"
+    post "/notifywhats", to: "verify#message"
+    
   end
 end
