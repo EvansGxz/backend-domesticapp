@@ -16,6 +16,15 @@ class CategoriesController < ApplicationController
     end
   end
 
+  def show_sector
+    @category = Category.where(sector_id: params[:id])
+    if @category
+      render json: @category, status: :ok
+    else
+      render json: { errors: "Not found" }, status: :not_found
+    end
+  end
+
   def show_country
     @category = Category.where(region: params[:id])
     if @category
