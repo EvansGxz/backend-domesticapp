@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "/employee/:id", to: "users#employee_profile"
   get "/customer_country/:id", to: "users#customer_country"
   delete "/users/:id", to: "users#destroy"
-  
+  patch "/user_update/:id", to: "users#update_user"
   get "/user_id/:id", to: "users#customer_profile_user"
 
   # admin
@@ -176,7 +176,9 @@ Rails.application.routes.draw do
     # Account Security Phone Verification API
     post "/verification/start", to: "verify#start"
     post "/verification/verify", to: "verify#verify"
-    post "/notifywhats", to: "verify#message"
-    
+    post "/create_service", to: "verify#create_services"
+    post "/edit_service", to: "verify#edit_services"
+    post "/cancel_services", to: "verify#cancel_services"
+
   end
 end
