@@ -3,8 +3,8 @@
 # This class handle verify process with twi
 module Api
   class VerifyController < ApplicationController
-    skip_before_action :require_login!, only: %i[start verify message]
-    before_action :set_twilio_client, only: %i[start verify message]
+    skip_before_action :require_login!, only: %i[start verify create_services edit_services cancel_services]
+    before_action :set_twilio_client, only: %i[start verify create_services edit_services cancel_services]
 
     def start
       phone_number = params[:phone]
@@ -30,21 +30,84 @@ module Api
       end
     end
 
-    def message
-      
-      require 'rubygems' 
-      require 'twilio-ruby' 
-       
-      
+    def create_services
 
       phone = params[:phone]
       lada = params[:lada]
       service = params[:service]
-      @client.messages.create( 
-                                   body: "Nuevo Servicio Programado de #{service}",
-                                   from: "whatsapp:+18445052797",
-                                   to: "whatsapp:#{lada}1#{phone}"
-                                 ) 
+      day = params[:day]
+      service_time = params[:service_time]
+      finish_hour = params[:finish_hour]
+      customer = params[:customer]
+      address = params[:address]
+      employee = params[:employee]
+
+      body_message =
+        "*¡Tenemos un nuevo servicio programado en Domesticapp!:*\n\n"\
+        "Prestaremos el servicio de *#{service}* el día *#{day}* en las "\
+        "horas *#{service_time} - #{finish_hour}* a *#{customer}* en *#{address}* por parte de *#{employee}*.\n\n"\
+        "Verifica que todo se encuentre en orden. Un saludo - _El equipo Domesticapp_\n\n"\
+        "(Este es un mensaje de notificación automático, evite responderlo)"
+
+      @client.messages.create(from: "whatsapp:+18445052797",
+                              media_url: ['https://domesticapp-storage.s3.us-east-2.amazonaws.com/notifications/1.png'],
+                              body: body_message,
+                              to: "whatsapp:#{lada}1#{phone}"
+                            )
+    end
+
+    def edit_services
+
+      phone = params[:phone]
+      lada = params[:lada]
+      service = params[:service]
+      day = params[:day]
+      service_time = params[:service_time]
+      finish_hour = params[:finish_hour]
+      customer = params[:customer]
+      address = params[:address]
+      employee = params[:employee]
+
+      body_message =
+        "*¡Ups! Ha habido un cambio en un servicio programado en Domesticapp. "\
+        "Revisa la nueva información a continuación:*\n\n"\
+        "Prestaremos el servicio de *#{service}* el día *#{day}* en las "\
+        "horas *#{service_time} - #{finish_hour}* a *#{customer}* en *#{address}* por parte de *#{employee}*.\n\n"\
+        "Verifica que todo se encuentre en orden. Un saludo - _El equipo Domesticapp_\n\n"\
+        "(Este es un mensaje de notificación automático, evite responderlo)"
+
+      @client.messages.create(from: "whatsapp:+18445052797",
+                              media_url: ['https://domesticapp-storage.s3.us-east-2.amazonaws.com/notifications/2.png'],
+                              body: body_message,
+                              to: "whatsapp:#{lada}1#{phone}"
+                            )
+    end
+
+    def cancel_services
+
+      phone = params[:phone]
+      lada = params[:lada]
+      service = params[:service]
+      day = params[:day]
+      service_time = params[:service_time]
+      finish_hour = params[:finish_hour]
+      customer = params[:customer]
+      address = params[:address]
+      employee = params[:employee]
+
+      body_message =
+        "¡Ups! Ha habido un problema en un servicio programado en Domesticapp y por tal "\
+        "razón este se ha *cancelado*. Revisa la nueva información a continuación:\n\n"\
+        "El servicio cancelado es *#{service}* el día *#{day}* en las "\
+        "horas *#{service_time} - #{finish_hour}* a *#{customer}* en *#{address}* por parte de *#{employee}*.\n\n"\
+        "Verifica que todo se encuentre en orden. Un saludo - _El equipo Domesticapp_\n\n"\
+        "(Este es un mensaje de notificación automático, evite responderlo)"
+
+      @client.messages.create(from: "whatsapp:+18445052797",
+                              media_url: ['https://domesticapp-storage.s3.us-east-2.amazonaws.com/notifications/3.png'],
+                              body: body_message,
+                              to: "whatsapp:#{lada}1#{phone}"
+                            )
     end
 
 
@@ -77,7 +140,7 @@ module Api
 
     def set_twilio_client
       account_sid = "ACe0f9a419f2c4afdaeb89fbc487c16c3e"
-      auth_token = "42facc3d561f9d0dc5484fafa043adce"
+      auth_token = "07352bcb0fd95522a195b43ac26bf8a6"
       @client = Twilio::REST::Client.new(account_sid, auth_token)
     end
 
