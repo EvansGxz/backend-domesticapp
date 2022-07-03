@@ -143,6 +143,16 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_user
+    @user = User.find_by(id: params[:id])
+
+    if @user.update(user_params)
+      render json: @user, methods: [:image_url], status: :created
+    else
+      render json: { errors: @user.errors }, status: :unprocessable_entity
+    end
+  end
+
   # DELETE /users/:id
   def destroy
     @user = User.find(params[:id]).destroy
@@ -183,6 +193,6 @@ class UsersController < ApplicationController
   end
 
   def admin_params
-    params.permit(:nickname, :role, :cover)
+    params.permit(:nickname, :role, :cover, :phone, :lada)
   end
 end
