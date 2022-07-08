@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   patch "/employees/:id", to: "users#create_employee"
   patch "/customers/:id", to: "users#create_customer"
   delete "/employee/:id", to: "users#destroy_employee"
+  patch "/employee_profile", to: "users#update_actual"
 
   resource :profile, controller: :users
   # Sessions

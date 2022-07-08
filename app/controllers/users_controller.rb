@@ -143,6 +143,14 @@ class UsersController < ApplicationController
     end
   end
 
+  def update_actual
+    if current_user.employee.update(employee_params)
+      render json: current_user.employee, status: :ok
+    else
+      render json: { errors: current_user.errors }, status: :unprocessable_entity
+    end
+  end
+
   def update_user
     @user = User.find_by(id: params[:id])
 
