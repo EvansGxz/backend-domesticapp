@@ -180,7 +180,7 @@ class UsersController < ApplicationController
 
   def employee_params
     params.permit(:full_name, :country, :document_id, :document_type, :contact, :region,
-                  :cover, :experience, :biografy, :phone, :birth_date, :user_id, :contrato)
+                  :cover, :new, :experience, :biografy, :phone, :birth_date, :user_id, :contrato)
   end
 
   def social_params
@@ -189,7 +189,7 @@ class UsersController < ApplicationController
 
   def customer_params
     params.permit(:document_id, :client_type, :birth_date, :region, :cod_refer, :country,
-                  :document_type, :full_name, :encargado, :cover)
+                  :document_type, :new, :full_name, :encargado, :cover)
   end
 
   def admin_params
