@@ -58,6 +58,15 @@ class OrderDetailsController < ApplicationController
     render json: @order_details, status: :created
   end
 
+  def show_date
+    @order_details = OrderDetail.where(start_date: params[:id])
+    if @order_details
+      render json: @order_details, status: :ok
+    else
+      render json: { errors: "Not found" }, status: :not_found
+    end
+  end
+
   # PATCH/order_details/[:id]
   def update
     @order_details = OrderDetail.find_by(id: params[:id])

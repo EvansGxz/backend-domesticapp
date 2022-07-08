@@ -79,6 +79,7 @@ Rails.application.routes.draw do
   get "/order_details/:id", to: "order_details#show"
   get "/order_customer/:id", to: "order_details#show_customer"
   get "/order_employee/:id", to: "order_details#show_employee"
+  get "/order_date/:id", to: "order_details#show_date"
 
   post "/order_details", to: "order_details#create"
   patch "/order_details/:id", to: "order_details#update"
