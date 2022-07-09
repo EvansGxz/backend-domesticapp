@@ -1,7 +1,7 @@
 class EmployeeSerializer < ActiveModel::Serializer
   attributes :id, :full_name, :country, :region, :document_id, :document_type, :contact, :created_at,
              :experience, :user_type, :email, :token, :image_url, :new, :contrato,
-             :user_id, :phone, :biografy, :lada, :cover
+             :user_id, :phone, :biografy, :lada, :cover, :contrato_url
 
   def user_type
     object.user.user_type

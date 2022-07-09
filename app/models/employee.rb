@@ -9,4 +9,8 @@ class Employee < ApplicationRecord
   def image_url
     Rails.application.routes.url_helpers.url_for(cover) if cover.attached?
   end
+
+  def contrato_url
+    Rails.application.routes.url_helpers.url_for(contrato) if contrato.attached?
+  end
 end
