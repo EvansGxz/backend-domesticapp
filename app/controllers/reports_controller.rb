@@ -19,7 +19,7 @@ class ReportsController < ApplicationController
 
   # POST /report
   def create_all
-    @report = Report.new(report_all_params)
+    @report = Report.new(report_params)
     if @report.save
       render json: @report, status: :created
     else
@@ -31,7 +31,7 @@ class ReportsController < ApplicationController
 
   def update_all
     @report = Report.find_by(id: params[:id])
-    if @report.update(report_all_params)
+    if @report.update(report_params)
       render json: @current_report, status: :ok
     else
       render json: { errors: "Not found" }, status: :not_found
