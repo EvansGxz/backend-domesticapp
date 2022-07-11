@@ -57,6 +57,12 @@ Rails.application.routes.draw do
   post "/reports", to: "reports#create_all"
   delete "/reports/:id", to: "reports#destroy_all"
 
+  # Report Services
+  get "/service_reports", to: "service_reports#index_all"
+  get "/service_reports/:id", to: "service_reports#show_all"
+  post "/service_reports", to: "service_reports#create_all"
+  delete "/service_reports/:id", to: "service_reports#destroy_all"
+
   # Services
   get "/services", to: "services#index"
   get "/services/:id", to: "services#show"
