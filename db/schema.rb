@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_07_11_004918) do
+ActiveRecord::Schema[7.0].define(version: 2022_07_11_014141) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -277,6 +277,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_11_004918) do
     t.bigint "order_detail_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "employee_id", null: false
+    t.index ["employee_id"], name: "index_service_reports_on_employee_id"
     t.index ["order_detail_id"], name: "index_service_reports_on_order_detail_id"
   end
 
@@ -333,6 +335,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_11_004918) do
   add_foreign_key "reviews", "employees"
   add_foreign_key "sector_cats", "categories"
   add_foreign_key "sector_cats", "sectors"
+  add_foreign_key "service_reports", "employees"
   add_foreign_key "service_reports", "order_details"
   add_foreign_key "services", "categories"
 end

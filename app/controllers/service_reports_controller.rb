@@ -52,6 +52,6 @@ class ServiceReportsController < ApplicationController
   private
 
   def report_params
-    params.permit(:body, :cover, :order_detail_id)
+    params.permit(:body, :cover, :order_detail_id, :employee_id)
   end
 end
