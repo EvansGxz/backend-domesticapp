@@ -197,7 +197,7 @@ class UsersController < ApplicationController
 
   def customer_params
     params.permit(:document_id, :client_type, :birth_date, :region, :cod_refer, :country,
-                  :document_type, :new, :full_name, :encargado, :cover)
+                  :document_type, :new, :full_name, :encargado, :cover, :image_url)
   end
 
   def admin_params
