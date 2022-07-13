@@ -17,7 +17,7 @@ class EmployeeCategoriesController < ApplicationController
   end
 
   def show_employee
-    @employee_category = EmployeeCategory.where(employee: params[:id])
+    @employee_category = EmployeeCategory.where(employee_id: params[:id])
     if @employee_category
       render json: @employee_category, status: :ok
     else
